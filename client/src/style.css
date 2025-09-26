@@ -1,96 +1,120 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Landing page large title and description */
+.landing-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 60px 0 20px 0;
   text-align: center;
+  color: #222;
+  letter-spacing: 1px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.landing-desc {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  color: #444;
+  line-height: 1.6;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+/* Global styles */
+body {
+  background-color: #ffffff; /* White background for the whole page */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 50px; /* Space for sidebar */
+  padding: 20px;
+
 }
 
+/* Main content grid */
+#main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card styles */
 .card {
-  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* subtle shadow */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin: 2px;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(1, 1, 1, 0.15);
+  background-color: #f9f9f9;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Top container for image */
+.top-container {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+}
+
+/* Bottom container for info */
+.bottom-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bottom-container h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #111;
+}
+
+.bottom-container p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Read More link styled as a button */
+.bottom-container a, .home-button{
+  margin-top: 10px;
+  text-decoration: none;
+  color: gray;
+  font-weight: bold;
+  background-color: aqua;
+  padding: 8px 12px;
+  border-radius: 6px;
+  text-align: center;
+  width: fit-content;
+  transition: background-color 0.2s;
+}
+
+.bottom-container a:hover {
+  background-color: #00bcd4;
+}
+
+/* Responsive tweaks */
+@media (max-width: 500px) {
+  #main-content {
+    grid-template-columns: 1fr;
+
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+
+  body {
+
+  margin-left: 20px; /* Space for sidebar */
+  margin-right: 20px;
+
+
+}
+
+}
+@media (min-width: 501px) and (max-width: 800px) {
+  #main-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -2,9 +2,11 @@ import express from 'express'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import productsRouter from './routes/products.js'
+import './dotenv.js';
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
+
 
 const app = express()
 

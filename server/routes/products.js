@@ -2,6 +2,8 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import products from "../data/products.js";
+import ProductsController from '../controllers/gifts.js'
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,9 +16,8 @@ router.get('/404', (req, res) => {
 });
 
 // Get all products (JSON)
-router.get('/', (req, res) => {
-  res.status(200).json(products);
-});
+
+router.get('/', ProductsController.getProducts);
 
 // Get single product data (JSON)
 router.get('/:productId/data', (req, res) => {
